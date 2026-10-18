@@ -62,4 +62,3 @@ Imported songs stay in this browser’s IndexedDB. Media is not uploaded or shar
 Only four-lane and circle modes are playable. Piano, directional, runner, and platform modes are planned; arc mode is experimental. Circle charts currently support tap targets. Chart imports from other games are not translated. The procedural generator estimates tempo from local audio energy and onsets; it is a baseline, not a claim of perfect beat detection.
 
 The original built-in compositions are synthesized in your browser and are provided for use in this prototype. User-imported media remains subject to its owner’s license and permissions.
-
