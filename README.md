@@ -2,17 +2,49 @@
 
 A local-first, cinematic rhythm-game prototype and song-making studio. It runs in a modern browser without a backend, account, package install, external media service, or network dependency.
 
-## Run locally
+The runnable app is currently on the `codex/echo-void-playable-prototype` branch while [PR #1](https://github.com/lucky1232011/NONEATTHISTIME/pull/1) is open. The `main` branch contains this README; clone the app branch using the steps below.
 
-From this directory, start the included dependency-free local server:
+## Run on Windows
+
+### 1. Install Node.js
+
+Install the current Node.js LTS release if `node` is not already available. You do not need to install npm packages for this project.
+
+### 2. Clone this project
+
+Open PowerShell in the folder where you want the project saved, then run:
+
+    git clone --branch codex/echo-void-playable-prototype https://github.com/lucky1232011/NONEATTHISTIME.git
+    cd NONEATTHISTIME
+
+If you already cloned the repository, just use `cd` to move into its `NONEATTHISTIME` folder. Run the remaining commands from that folder—the one containing `server.js`.
+
+### 3. Start the local server
+
+In PowerShell, run:
 
     node server.js
 
-Open http://localhost:4173. Web Audio and IndexedDB need a secure browser context; localhost provides one.
-The app has no build step or package install.
+Leave this PowerShell window open while you play. It should print that the ECHO//VOID server is listening at `http://localhost:4173`.
 
-Run the built-in smoke tests with:
+### 4. Open the game
 
+On the same computer where the server is running, open this address in your browser:
+
+    http://localhost:4173
+
+If the page does not load, check that PowerShell is still running `node server.js` and that you are using a browser on the same computer. A browser embedded in a separate app or remote environment may not be able to reach that computer's `localhost`.
+
+To stop the server, return to PowerShell and press **Ctrl+C**.
+
+There is no build step or package install. Web Audio and IndexedDB work on the local `localhost` address.
+
+### Optional: run the checks
+
+Open a second PowerShell window in the `NONEATTHISTIME` folder and run:
+
+    node --check app.js
+    node --check server.js
     node --test tests/smoke.test.cjs
 
 ## Included
@@ -62,3 +94,4 @@ Imported songs stay in this browser’s IndexedDB. Media is not uploaded or shar
 Only four-lane and circle modes are playable. Piano, directional, runner, and platform modes are planned; arc mode is experimental. Circle charts currently support tap targets. Chart imports from other games are not translated. The procedural generator estimates tempo from local audio energy and onsets; it is a baseline, not a claim of perfect beat detection.
 
 The original built-in compositions are synthesized in your browser and are provided for use in this prototype. User-imported media remains subject to its owner’s license and permissions.
+
